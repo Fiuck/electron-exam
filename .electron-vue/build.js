@@ -34,11 +34,12 @@ async function build () {
 
   del.sync(['dist/electron/*', '!.gitkeep'])
 
-  const tasks = ['main', 'renderer']
-  const m = new Multispinner(tasks, {
-    preText: 'building',
-    postText: 'process'
-  })
+  // 构建失败而注释，疑似是官方bug
+  // const tasks = ['main', 'renderer']
+  // const m = new Multispinner(tasks, {
+  //   preText: 'building',
+  //   postText: 'process'
+  // })
 
   let results = ''
 
