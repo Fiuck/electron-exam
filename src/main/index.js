@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu } from 'electron'
 import '../renderer/store'
 
 /**
@@ -14,13 +14,15 @@ const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
 
-function createWindow () {
+function createWindow() {
   /**
    * Initial window options
    */
   mainWindow = new BrowserWindow({
     useContentSize: false,
-    fullscreen: true
+    fullscreen: true,  // 全屏
+    frame: false, // 关闭工具栏
+    resizable: false //禁止改变主窗口尺寸
   })
 
   mainWindow.loadURL(winURL)

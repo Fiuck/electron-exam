@@ -15,6 +15,7 @@
           v-model="ruleForm2.username"
           auto-complete="off"
           placeholder="用户名"
+          prefix-icon="el-icon-user"
         ></el-input>
       </el-form-item>
       <el-form-item prop="password">
@@ -23,6 +24,7 @@
           v-model="ruleForm2.password"
           auto-complete="off"
           placeholder="密码"
+          prefix-icon="el-icon-lock"
         ></el-input>
       </el-form-item>
       <el-checkbox v-model="checked" class="rememberme">记住密码</el-checkbox>
@@ -60,34 +62,34 @@ export default {
         password: [{ required: true, message: "请输入密码", trigger: "blur" }],
       },
       checked: false,
-    }
+    };
   },
   methods: {
     handleSubmit(event) {
       this.$refs.ruleForm2.validate((valid) => {
         if (valid) {
-          this.logining = true
+          this.logining = true;
           if (
             this.ruleForm2.username === "admin" &&
             this.ruleForm2.password === "123456"
           ) {
-            this.logining = false
-            sessionStorage.setItem("user", this.ruleForm2.username)
-            this.$router.push({ path: "/" })
+            this.logining = false;
+            // sessionStorage.setItem("user", this.ruleForm2.username)
+            this.$router.push({ path: "/layout" });
           } else {
-            this.logining = false
+            this.logining = false;
             this.$alert("username or password wrong!", "info", {
               confirmButtonText: "ok",
-            })
+            });
           }
         } else {
-          console.log("error submit!")
-          return false
+          console.log("error submit!");
+          return false;
         }
-      })
+      });
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -108,5 +110,8 @@ export default {
 label.el-checkbox.rememberme {
   margin: 0px 0px 15px;
   text-align: left;
+}
+.title {
+  text-align: center;
 }
 </style>

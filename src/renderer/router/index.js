@@ -11,8 +11,9 @@ export default new Router({
       component: () => import('views/login')
     },
     {
-      path: '*',
-      redirect: '/'
+      path: '/layout',
+      name: 'layout',
+      component: () => import('views/layout')
     }
   ]
 })
