@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     getMenuList() {
-      // this.tags = JSON.parse(window.sessionStorage.getItem("menuList"));
+      this.tags = JSON.parse(window.sessionStorage.getItem("menuList"));
     },
     // 点击标签
     clickMenu(tag) {
@@ -45,7 +45,7 @@ export default {
     },
     // 关闭标签
     handleClose(tag) {
-      // let menuList = JSON.parse(window.sessionStorage.getItem("menuList"));
+      let menuList = JSON.parse(window.sessionStorage.getItem("menuList"));
       let result = menuList.findIndex((item) => item.path === tag.path);
       menuList.splice(result, 1);
       this.tags = menuList;
@@ -53,7 +53,7 @@ export default {
         this.$router.push(this.tags[this.tags.length - 1].path);
         this.$store.dispatch("app/selectMenu", this.tags[this.tags.length - 1]);
       }
-      // window.sessionStorage.setItem("menuList", JSON.stringify(menuList));
+      window.sessionStorage.setItem("menuList", JSON.stringify(menuList));
     },
   },
   watch: {

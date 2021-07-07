@@ -15,10 +15,10 @@ const mutations = {
     SELECT_MENU: (state, payload) => {
         if (payload.path === '/') {
             state.navbar.currentMenu = null
-            // window.sessionStorage.setItem('selectMenu', null)
+            window.sessionStorage.setItem('selectMenu', null)
         } else {
             state.navbar.currentMenu = payload
-            // window.sessionStorage.setItem('selectMenu', JSON.stringify(payload))
+            window.sessionStorage.setItem('selectMenu', JSON.stringify(payload))
         }
     }
 }

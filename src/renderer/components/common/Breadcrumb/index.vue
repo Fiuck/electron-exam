@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     refreshRoute() {
-      // this.sessionData = window.sessionStorage.getItem("selectMenu");
+      this.sessionData = window.sessionStorage.getItem("selectMenu");
     },
   },
   watch: {
