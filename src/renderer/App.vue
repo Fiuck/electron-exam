@@ -5,11 +5,13 @@
 </template>
 
 <script>
-  export default {
-    name: 'electron-exam'
-  }
+export default {
+  name: "electron-exam",
+};
 </script>
 
 <style>
-  /* CSS */
+body {
+  margin: 0;
+}
 </style>

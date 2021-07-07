@@ -75,7 +75,7 @@ export default {
           ) {
             this.logining = false;
             // sessionStorage.setItem("user", this.ruleForm2.username)
-            this.$router.push({ path: "/layout" });
+            this.$router.push({ path: "/index" });
           } else {
             this.logining = false;
             this.$alert("username or password wrong!", "info", {
