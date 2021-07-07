@@ -17,12 +17,12 @@ export default new Router({
       name: 'layout',
       component: layout,
       children: [
-        {
-          name: 'dashboard',
-          path: '/dashboard',
-          component: () => import('views/dashboard'),
-          meta: { title: '控制台' }
-        }
+        // {
+        //   name: 'dashboard',
+        //   path: '/dashboard',
+        //   component: () => import('views/dashboard'),
+        //   meta: { title: '控制台' }
+        // }
       ]
     }
   ]

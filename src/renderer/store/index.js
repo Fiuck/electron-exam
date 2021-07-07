@@ -3,14 +3,14 @@ import Vuex from 'vuex'
 
 import { createPersistedState, createSharedMutations } from 'vuex-electron'
 
-import modules from './modules'
-import getters from './getters'
+// import modules from './modules'
+// import getters from './getters'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules,
-  getters,
+  // modules,
+  // getters,
   plugins: [
     createPersistedState(),
     createSharedMutations()
